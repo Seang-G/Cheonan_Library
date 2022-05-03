@@ -28,7 +28,15 @@ header {
 
 footer {
   height: 100px;
+  padding: 30px;
   background-color: black;
+  color: white;
+  font-size: 0.8rem;
+}
+
+footer:nth-child(2) {
+  position: relative;
+  right: 10px;
 }
 
 #title {
