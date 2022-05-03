@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+
+  font-family: 'Jua', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  height: 80px;
+
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  box-shadow: 0px 3px 3px grey;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+footer {
+  height: 100px;
+  background-color: black;
+}
+
+#title {
+  flex-grow: 1;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 50px;
+}
