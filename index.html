@@ -12,6 +12,7 @@
   <script type="text/javascript">
     document.oncontextmenu = function(){return false;}
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body oncontextmenu="return flase" onselectstart="return false" ondragstart="return false" onkeydown="return true">
   <header>
@@ -28,6 +29,8 @@
       <img id="map"
       src="src/map7.png" alt="map" height="80%">
       <div id="dots">
+        <div id="public-dots"></div>
+        <div id="litle-dots"></div>
       </div>
       <div id="buttons">
         <button>공공도서관</button>
@@ -41,6 +44,7 @@
     <div>xxxx.xxxx</div>
   </footer>
 
+  <script src="./JS/test.js"></script>
   <script src="./JS/dots.js"></script>
   <script src="./JS/dotsInfo.js"></script>
   <script src="./JS/dotsControl.js"></script>

@@ -1,80 +1,71 @@
-const coordinates00 = [
-  [36.80917325,	127.1535923],
-  [36.80040792,	127.1146491],
-  [36.87162843,	127.2010113],
-  [36.76719291,	127.3025835],
-  [36.81612841,	127.1130483],
-  [36.83459674,	127.1346155],
-  [36.77441534,	127.1307313],
-  [36.78946052,	127.1563583]
-];
-
-const coordinatesLitle = [
-  [36.8001171, 127.1581461],
-  [36.80454656,	127.1496381],
-  [36.79912457,	127.1353251],
-  [36.74222767,	127.2369957],
-  [36.72182275,	127.1187666],
-  [36.81422134,	127.1521491],
-  [36.9133491, 127.2182211],
-  [36.9181614, 127.1343912],
-  [36.8790065, 127.1504675],
-  [36.69497347,	127.1105835],
-  [36.81745837,	127.1601766],
-  [36.82143819,	127.1457665],
-  [36.81503662,	127.1428673],
-  [36.78791317,	127.2357247],
-  [36.8227841, 127.2722181]
-];
-
-name00 = [
-  '중앙도서관',
-  '쌍용도서관',
-  '성거도서관',
-  '아우내도서관',
-  '도솔도서관',
-  '두정도서관',
-  '신방도서관',
-  '청수도서관'
-];
-
-nameLitle = [
-  '원성2동작은도서관',
-  '중앙동작은도서관',
-  '일봉동작은도서관',
-  '성남면작은도서관',
-  '풍세면작은도서관',
-  '문성동작은도서관',
-  '입장면작은도서관',
-  '성환읍다문화작은도서관',
-  '직산읍작은도서관',
-  '광덕작은도서관',
-  '신안동작은도서관',
-  '천안축구센터작은도서관',
-  '성정1동작은도서관',
-  '목천느티나무작은도서관',
-  '북면바로내작은도서관'
-];
+// ------------- dot 생성 ------------- //
+const publicDots = document.querySelector("#public-dots");
+const litleDots = document.querySelector("#litle-dots");
 
 function coorToPercent(xy){
   return [(xy[0]-36.62)/0.35*100, (xy[1]-127)/0.46*100];
 }
 
-function addDots(list, dot, className){
-  for (const i in list){
-    Pxy = coorToPercent(xy[i]);
-    var span = document.createElement("span");
-    span.innerHTML = dot;
-    span.classList.add(className);
-    span.classList.add("data-Name");
-    span['data-Name'] = 
-    span.style = `bottom:${Pxy[0]}%; left:${Pxy[1]}%;`;
-    dots.appendChild(span);
+function addDots(obj){
+  const Pxy = coorToPercent([obj.위도, obj.경도]);
+
+  const span = document.createElement("span");
+  span.setAttribute("data-name", obj.도서관명);
+  span.style = `bottom:${Pxy[0]}%; left:${Pxy[1]}%;`;
+  span.classList.add("dot");
+
+  if (obj.도서관유형 == '공공도서관'){
+    span.classList.add("public");
+    span.innerHTML = "📕";
+    makeNameBox(span)
+    span.addEventListener(onmouseover, function(){
+      toggleHidden(span.children[0])
+    });
+    publicDots.appendChild(span);
+  } else {
+    span.classList.add("litle");
+    span.innerHTML = "📗";
+    makeNameBox(span)
+    span.addEventListener(onmouseover, function(){
+      toggleHidden(span.children[0])
+    });
+    litleDots.appendChild(span);
   }
 }
 
-const dots = document.querySelector('#dots');
-let Pxy;
+function makeNameBox(node){
+  const div = document.createElement("div");
+  div.style = 'width:10px; height:10px; background-color:white;'
+  div.innerHTML = node["data-name"];
+  div.classList.add("hidden");
+  node.appendChild(div);
+}
 
-addDots(coordinates00, "📕", "public");
-addDots(coordinatesLitle, "📗", "litle");
+var json = $.getJSON("../../천안시_도서관.json", function(jsonData){
+  $.each(jsonData, function(_, data){
+    addDots(data)
+  })
+});
+
+// ------------- 토글 ------------- //
+
+const buttons = document.querySelectorAll("#buttons button");
+const publicButton = buttons[0];
+const litleButton = buttons[1];
+
+function toggleHidden(node){
+  node.classList.toggle("hidden");
+}
+
+function publicButtonHandler(){
+  toggleHidden(publicDots);
+}
+
+function litleButtonHandler(){
+  toggleHidden(litleDots);
+}
+
+publicButton.addEventListener("click", publicButtonHandler);
+litleButton.addEventListener("click", litleButtonHandler);
+
+// ------------- hover ------------- //
