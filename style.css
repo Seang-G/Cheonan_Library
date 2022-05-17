@@ -6,6 +6,7 @@
 
 .hidden {
   visibility: hidden;
+  opacity: 0%;
 }
 
 body {
@@ -28,7 +29,7 @@ header, footer {
   border: 4px outset #F2E2C4;
   border-radius: 10px;
 
-  margin: 20px;
+  margin: 20px auto;
 
   color: white;
   /* background-color: #0d0d0d; */
@@ -39,6 +40,7 @@ header, footer {
 
 header {
   height: 100px;
+  max-width: 700px;
 
   /* border: 1px solid red; */
 
@@ -47,8 +49,13 @@ header {
   align-items: flex-start;
 }
 
+#title {
+  font-weight: 300;
+}
+
 footer {
   height: 100px;
+  max-width: 700px;
   padding: 30px;
   font-size: 0.8rem;
 }
@@ -76,10 +83,6 @@ a:link:hover, a:visited:hover {
   color: white;
 }
 
-#title {
-  font-weight: 300;
-}
-
 main {
   margin: 20px;
   padding-top: 10px;
@@ -101,25 +104,54 @@ img {
   border: 5px inset rgb(176, 126, 73);
 }
 
-#dots span {
+#dots>div>span {
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#dots>div>span:hover{
+  z-index: 1;
+}
+
+.dot {
   cursor: pointer;
   font-size: 2vw;
-  text-align: center;
-  position: absolute;
-  /* top: 30%;
-  left: 30%; */
-  width: 20px;
+  transition: font-size;
+  transition-duration: 0.3s;
 }
 
 @media (min-width: 700px){
-  #dots span{
+  .dot {
     font-size: 0.8rem;
   }
 }
 
-#dots span:hover {
+.dot:hover {
   font-size: 1rem;
   z-index: 1;
+}
+
+.simpleInfo {
+  width: max-content;
+  /* position: absolute; */
+
+  background-color: antiquewhite;
+
+  padding: 1px 10px;
+  /* margin: 0 auto; */
+  border: 1px solid black;
+  border-radius: 10px;
+  
+  font-size: 15px;
+  font-weight: 250;
+  /* visibility: hidden; */
+  transition: opacity visibility;
+  transition-duration: 0.5s;
 }
 
 #buttons {
