@@ -1,0 +1,36 @@
+#main-wrap {
+  max-width: 700px;
+  height: max-content;
+  margin: 0 auto;
+  position: relative;
+  background-color: rgba(220, 167, 110, 0.429);
+  border-radius: 10px;
+  border: 5px inset rgb(176, 126, 73);
+  padding: 10px;
+
+  text-align: left;
+  color:rgb(209, 199, 181);
+}
+
+table {
+  margin: 0 auto;
+  border-spacing: 3px 10px;
+  border-radius: 10px;
+  background-color: rgba(35, 35, 35, 0.272);
+  /* border: 10px; */
+}
+
+thead {
+  background-color: rgba(46, 46, 46, 0.577);
+  text-align: center;
+}
+
+td, th {
+  font-size: 0.9rem;
+  padding: 5px;
+  height: 50px;
+}
+
+tr:nth-last-child(2n) {
+  background-color: rgba(191, 97, 53, 0.429);
+}
