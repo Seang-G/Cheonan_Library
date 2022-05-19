@@ -23,7 +23,7 @@ function addDots(obj){
     $("#litle-dots").append(span);
   }
 
-  span.lastChild.addEventListener("mouseenter", function(e){
+  span.lastChild.addEventListener("mouseover", function(e){
     toggleHidden(e.path[1].children[0]);
   });
 
@@ -46,7 +46,7 @@ function makeDot(node, str){
   node.appendChild(span);
 }
 
-var json = $.getJSON("../../천안시_도서관.json", function(jsonData){
+var json = $.getJSON("../src/천안시_도서관.json", function(jsonData){
   $.each(jsonData, function(_, data){
     addDots(data);
   });
