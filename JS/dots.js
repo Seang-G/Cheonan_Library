@@ -46,7 +46,7 @@ function makeDot(node, str){
   node.appendChild(span);
 }
 
-var json = $.getJSON("../src/천안시_도서관.json", function(jsonData){
+var json = $.getJSON("../src/data.json", function(jsonData){
   $.each(jsonData, function(_, data){
     addDots(data);
   });
