@@ -15,9 +15,16 @@ body {
 
   /* background-color: black; */
   background-image: url("../src/wood.png");
+  overflow-x: hidden;
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
+}
+
+hr {
+  /* position: absolute; */
+  width: 100%;
+  margin: 0 auto;
 }
 
 header, footer {
@@ -85,7 +92,6 @@ a:link:hover, a:visited:hover {
 }
 
 main {
-  margin: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
@@ -139,6 +145,7 @@ img {
 
 .simpleInfo {
   width: max-content;
+  overflow-x: visible;
   /* position: absolute; */
 
   background-color: antiquewhite;
@@ -150,8 +157,7 @@ img {
   
   font-size: 15px;
   font-weight: 250;
-  /* visibility: hidden; */
-  transition: opacity visibility;
+
   transition-duration: 0.5s;
 }
 
@@ -185,4 +191,79 @@ img {
 
 #buttons button:active {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+#info {
+  width: 100vw;
+  height: fit-content;
+
+  padding: 30px;
+  position: absolute;
+  top: -400vh;
+  left: 0;
+  padding: 0;
+
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  transition: top;
+  transition-duration: 1s;
+}
+
+#info-wrap {
+  background-color: rgba(0, 0, 0, 0.7);
+  
+  margin: 0 auto;
+  width: 40%;
+}
+
+#info-header {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: rgba(90, 90, 90, 0.7);
+}
+
+#info-header h2 {
+  font-weight: 300;
+}
+
+#info-X {
+  position: fixed;
+  top: -100px;
+  right: 100px;
+  transition: top;
+  transition-duration: 1s;
+}
+
+#info-main {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+#info-main h3::before{
+  content: "• ";
+}
+#info-main h3 {
+  font-weight: 200;
+}
+
+#info-main div{
+  margin: 20px 0 30px 20px;
+}
+
+@media all and (max-width: 900px) {
+  * {
+    font-size: small;
+  }
+
+  #info-wrap {
+    width: 100%;
+    margin: 0;
+  }
+
+  #info-X {
+    right: 30px
+  }
 }
