@@ -64,7 +64,7 @@ function addInfo(node, obj){
   })
 }
 
-var json = $.getJSON("../src/data.json", function(jsonData){
+var json = $.getJSON("./src/data.json", function(jsonData){
   $.each(jsonData, function(_, data){
     addDots(data);
   });
