@@ -128,6 +128,7 @@ function litleButtonHandler(){
 
 publicButton.addEventListener("click", publicButtonHandler);
 litleButton.addEventListener("click", litleButtonHandler);
+
 infoX.addEventListener("click", ()=>{
   infoX.style.top = "-100px";
   info.style.top = info.offsetHeight * (-1) + "px";

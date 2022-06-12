@@ -33,3 +33,23 @@ td, th {
 tr:nth-last-child(2n) {
   background-color: rgba(191, 97, 53, 0.429);
 }
+
+table a {
+  cursor: pointer;
+  color: rgb(173, 166, 153);
+  transition: color;
+  transition-duration: 0.3s;
+}
+
+table a:hover {
+  color: rgb(209, 199, 181);
+}
+
+table a:visited, table a:link {
+  color: rgb(173, 166, 153);
+  text-decoration: none;
+}
+
+table a:link:hover, table a:visited:hover {
+  color: rgb(209, 199, 181);
+}
