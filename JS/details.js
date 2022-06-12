@@ -13,7 +13,6 @@ var json = $.getJSON("./src/data.json", function(jsonData){
     const tr = document.createElement("tr");
     tr.innerHTML = `<td>${data.도서관명}</td><td>${data.도서관전화번호}</td><td>${data.소재지도로명주소}</td>`;
     tbody.appendChild(tr);
-    console.dir(data);
   });
 });
 table.appendChild(tbody);

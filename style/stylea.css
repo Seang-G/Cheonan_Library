@@ -9,12 +9,9 @@
   opacity: 0%;
 }
 
-.none {
-  display: none;
-}
-
 body {
-  background-image: url("../src/wood.png");
+  /* background-image: url("../src/wood.png"); */
+  background-color: rgb(79, 9, 29);
   overflow-x: hidden;
 }
 
@@ -25,7 +22,7 @@ hr {
 
 header, footer {
   max-width: 650px;
-  min-width: 310px;
+  min-width: 300px;
 
   padding-bottom: 10px;
   padding-left: 30px;
@@ -53,17 +50,12 @@ header {
   align-items: flex-start;
 }
 
-header img {
-  height: 20px;
-}
-
 #title {
   font-weight: 300;
 }
 
 footer {
-  min-height: 50px;
-  height: fit-content;
+  height: 50px;
   max-width: 700px;
   padding: 30px;
   font-size: 0.8rem;
@@ -77,8 +69,6 @@ footer:nth-child(2) {
 a {
   cursor: pointer;
   color: gray;
-  transition: color;
-  transition-duration: 0.3s;
 }
 
 a:hover {
@@ -100,18 +90,19 @@ main {
   text-align: center;
 }
 
-#map-wrap img {
+img {
   width: 100%;
+  
 }
 
 #quotes {
   max-width: 700px;
-  min-width: 310px;
+
   margin: 0 auto 20px auto;
   padding: 10px;
   border-radius: 30px 0;
-  border: 5px inset rgba(151, 191, 180, 0.5);
-  background-color: rgb(186, 220, 211, 0.5);
+  border: 5px inset rgba(151, 191, 180, 0.8);
+  background-color: rgb(186, 220, 211, 0.8);
   color:rgb(79, 9, 29, 1);  
 }
 
@@ -131,8 +122,8 @@ main {
   margin: 0 auto;
   position: relative;
   border-radius: 10px;
-   background-color: rgba(220, 167, 110, 0.429); 
-  border: 5px inset rgb(176, 126, 73);
+   background-color: rgb(151, 191, 180); 
+  border: 5px inset rgb(151, 191, 180);
   
   /* background-color: rgba(79, 9, 29, 0.5);
   border: 5px inset rgb(135, 31, 60, 0.5); */
@@ -141,16 +132,14 @@ main {
 #dots>div>span {
   position: absolute;
   width: 20px;
-  max-height: 50px;
-  height: fit-content;
+  height: 50px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
 #dots>div>span:hover{
-  /* height: 50px; */
   z-index: 1;
 }
 
@@ -175,6 +164,7 @@ main {
 .simpleInfo {
   width: max-content;
   overflow-x: visible;
+
   background-color: antiquewhite;
 
   padding: 1px 10px;
@@ -213,8 +203,6 @@ main {
   border-radius: 10px;
   color:lavender;
   padding: 7px;
-  transition: background-color;
-  transition-duration: 0.3s;
 }
 
 #buttons button:active {
